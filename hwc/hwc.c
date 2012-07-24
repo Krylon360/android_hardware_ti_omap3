@@ -311,7 +311,7 @@ omap3_hwc_setup_layer_base(struct dss2_ovl_cfg *oc, int index, int format, int b
 
     default:
         /* Should have been filtered out */
-        LOGV("Unsupported pixel format");
+        ALOGV("Unsupported pixel format");
         return;
     }
 

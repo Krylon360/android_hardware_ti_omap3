@@ -1489,37 +1489,35 @@ static void handle_hotplug(omap3_hwc_device_t *hwc_dev, int state)
     ext->dock.enabled = ext->mirror.enabled = 0;
 
     if (state == 1) { /* hdmi panel enable */
-	hdmi_enabled = 1;
-	tv_enabled = 0;
-
-	system("echo 0 >" "/sys/devices/platform/dsscomp/isprsz/enable");
-	system("echo 0 >" "/sys/devices/platform/omapdss/display1/enabled");
-	system("echo 0 >" "/sys/devices/platform/omapdss/overlay0/enabled");
-	system("echo 0 >" "/sys/devices/platform/omapdss/display0/enabled");
-	system("echo hdmi >" "/sys/devices/platform/omapdss/manager0/display");
-	system("echo 1 >" "/sys/devices/platform/omapdss/display1/enabled");
-	system("echo 1 >" "/sys/devices/platform/omapdss/overlay0/enabled");
+    hdmi_enabled = 1;
+	 tv_enabled = 0;
+	 system("echo 0 >" "/sys/devices/platform/dsscomp/isprsz/enable");
+	 system("echo 0 >" "/sys/devices/platform/omapdss/display1/enabled");
+	 system("echo 0 >" "/sys/devices/platform/omapdss/overlay0/enabled");
+	 system("echo 0 >" "/sys/devices/platform/omapdss/display0/enabled");
+	 system("echo hdmi >" "/sys/devices/platform/omapdss/manager0/display");
+	 system("echo 1 >" "/sys/devices/platform/omapdss/display1/enabled");
+	 system("echo 1 >" "/sys/devices/platform/omapdss/overlay0/enabled");
     } else if(state == 2) { /* tv-out enable */
-	hdmi_enabled = 0;
-	tv_enabled = 1;
-	system("echo 0 >" "/sys/devices/platform/omapdss/overlay1/enabled");
-	system("echo tv >" "/sys/devices/platform/omapdss/overlay1/manager");
-	system("echo 1 >" "/sys/devices/platform/omapdss/overlay1/enabled");
-	system("echo 1 >" "/sys/devices/platform/omapdss/display2/enabled");
+	 hdmi_enabled = 0;
+	 tv_enabled = 1;
+	 system("echo 0 >" "/sys/devices/platform/omapdss/overlay1/enabled");
+	 system("echo tv >" "/sys/devices/platform/omapdss/overlay1/manager");
+	 system("echo 1 >" "/sys/devices/platform/omapdss/overlay1/enabled");
+	 system("echo 1 >" "/sys/devices/platform/omapdss/display2/enabled");
     } else { /* lcd enable */
-        hdmi_enabled = 0;
-        ext->last_mode = 0;
-	tv_enabled = 0;
-
-		system("echo 1 >" "/sys/devices/platform/dsscomp/isprsz/enable");
-        system("echo 0 >" "/sys/devices/platform/omapdss/display1/enabled");
-        system("echo 0 >" "/sys/devices/platform/omapdss/overlay0/enabled");
-		system("echo 0 >" "/sys/devices/platform/omapdss/overlay1/enabled");
-		system("echo 800,450 >" "/sys/devices/platform/omapdss/overlay1/output_size");
-        system("echo lcd >" "/sys/devices/platform/omapdss/manager0/display");
-        system("echo 1 >" "/sys/devices/platform/omapdss/display0/enabled");
-		system("echo 1 >" "/sys/devices/platform/omapdss/overlay1/enabled");
-        system("echo 1 >" "/sys/devices/platform/omapdss/overlay0/enabled");
+    hdmi_enabled = 0;
+    ext->last_mode = 0;
+	 tv_enabled = 0;
+    system("echo 1 >" "/sys/devices/platform/dsscomp/isprsz/enable");
+    system("echo 0 >" "/sys/devices/platform/omapdss/display1/enabled");
+    system("echo 0 >" "/sys/devices/platform/omapdss/overlay0/enabled");
+	 system("echo 0 >" "/sys/devices/platform/omapdss/overlay1/enabled");
+	 system("echo 800,450 >" "/sys/devices/platform/omapdss/overlay1/output_size");
+    system("echo lcd >" "/sys/devices/platform/omapdss/manager0/display");
+    system("echo 1 >" "/sys/devices/platform/omapdss/display0/enabled");
+	 system("echo 1 >" "/sys/devices/platform/omapdss/overlay1/enabled");
+    system("echo 1 >" "/sys/devices/platform/omapdss/overlay0/enabled");
 
 
     }

@@ -1511,17 +1511,18 @@ static void handle_hotplug(omap3_hwc_device_t *hwc_dev, int state)
         ext->last_mode = 0;
 	tv_enabled = 0;
 
-	system("echo 1 >" "/sys/devices/platform/dsscomp/isprsz/enable");
+		system("echo 1 >" "/sys/devices/platform/dsscomp/isprsz/enable");
         system("echo 0 >" "/sys/devices/platform/omapdss/display1/enabled");
         system("echo 0 >" "/sys/devices/platform/omapdss/overlay0/enabled");
-	system("echo 0 >" "/sys/devices/platform/omapdss/overlay1/enabled");
-	system("echo 800,450 >" "/sys/devices/platform/omapdss/overlay1/output_size");
+		system("echo 0 >" "/sys/devices/platform/omapdss/overlay1/enabled");
+		system("echo 800,450 >" "/sys/devices/platform/omapdss/overlay1/output_size");
         system("echo lcd >" "/sys/devices/platform/omapdss/manager0/display");
         system("echo 1 >" "/sys/devices/platform/omapdss/display0/enabled");
-	system("echo 1 >" "/sys/devices/platform/omapdss/overlay1/enabled");
+		system("echo 1 >" "/sys/devices/platform/omapdss/overlay1/enabled");
         system("echo 1 >" "/sys/devices/platform/omapdss/overlay0/enabled");
-    }
 
+
+    }
     omap3_hwc_create_ext_matrix(ext);
     LOGI("external display changed (state=%d, mirror={%s tform=%ddeg%s}, dock={%s tform=%ddeg%s}, tv=%d", state,
          ext->mirror.enabled ? "enabled" : "disabled",

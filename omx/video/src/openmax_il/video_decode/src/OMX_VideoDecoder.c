@@ -531,7 +531,7 @@ OMX_ERRORTYPE OMX_ComponentInit (OMX_HANDLETYPE hComponent)
 	else
 	{
          //DOMX_ERROR("FATAL: gralloc api hw_get_module() returned error: Can't find \
-		 %s module err = %x", GRALLOC_HARDWARE_MODULE_ID, err);
+		 //%s module err = %x", GRALLOC_HARDWARE_MODULE_ID, err);
 		eError = OMX_ErrorInsufficientResources;
 		return eError;
 	}

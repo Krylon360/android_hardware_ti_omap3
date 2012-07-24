@@ -20,7 +20,7 @@ PRODUCT_PACKAGES := \
 	libOMX_Core \
 	libstagefrighthw \
 	libion \
-	hwcomposer.omap4 \
+	hwcomposer.omap3 \
 	smc_pa_ctrl \
 	tf_daemon
 

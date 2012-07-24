@@ -118,7 +118,7 @@
  */
 /* ======================================================================= */
     #ifdef ANDROID
-        #define AMRENC_EPRINT LOGE
+        #define AMRENC_EPRINT ALOGE
     #else   
         #define AMRENC_EPRINT(...)    fprintf(stderr,__VA_ARGS__)
     #endif

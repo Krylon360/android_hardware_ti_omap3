@@ -53,7 +53,7 @@
 #include <utils/Log.h>
 #undef LOG_TAG
 #define LOG_TAG "OMXRM"
-#define RM_EPRINT LOGE
+#define RM_EPRINT ALOGE
 
 #ifdef  RM_DEBUG
         #define RM_DPRINT LOGD

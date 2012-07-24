@@ -2077,9 +2077,11 @@ OMX_ERRORTYPE WMADECLCML_Callback (TUsnCodecEvent event,void * args [10])
                    on a valid buffer */
 #ifdef __PERF_INSTRUMENTATION__
                 PERF_SendingFrame(pComponentPrivate_CC->pPERFcomp,
-                                  pComponentPrivate_CC->pOutputBufferList->pBufHdr[pComponentPrivate_CC->nInvalidFrameCount++]->pBuffer,
-                                  pComponentPrivate_CC->pOutputBufferList->pBufHdr[pComponentPrivate_CC->nInvalidFrameCount++]->nFilledLen,
+                                  pComponentPrivate_CC->pOutputBufferList->pBufHdr[pComponentPrivate_CC->nInvalidFrameCount+1]->pBuffer,
+                                  pComponentPrivate_CC->pOutputBufferList->pBufHdr[pComponentPrivate_CC->nInvalidFrameCount+2]->nFilledLen,
                                   PERF_ModuleHLMM);
+                pComponentPrivate_CC->nInvalidFrameCount++;
+                pComponentPrivate_CC->nInvalidFrameCount++;
 #endif
                 pComponentPrivate_CC->cbInfo.FillBufferDone (pComponentPrivate_CC->pHandle,
                                                              pComponentPrivate_CC->pHandle->pApplicationPrivate,

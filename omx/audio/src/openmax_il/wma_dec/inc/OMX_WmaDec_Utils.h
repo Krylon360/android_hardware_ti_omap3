@@ -334,7 +334,7 @@
  * @def    WMADEC_EPRINT   Error print macro
  */
 /* ======================================================================= */
-#define WMADEC_EPRINT LOGE
+#define WMADEC_EPRINT ALOGE
 /* ======================================================================= */
 /**
  * @def    WMADEC_DPRINT   Debug print macro
